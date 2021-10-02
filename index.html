@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <h1>Красивое горизонтальное меню на html+css <br> Калькулятор <br> Текстовый редактор</h1>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Блог</a>
+        <a href="#">Портфолио</a>
+        <a href="#">Контакты</a>
+        <div class="animation start-home"></div>
+    </nav>
+    <div class="container">
+        <div class="item input"><form name="form"><input type="text" name="textview" readonly></form></div>
+        <div class="item clean" onclick="clean()">C</div>
+        <div class="item back" onclick="back()">&larr;</div>
+        <div class="item" onclick="insert('+')">+</div>
+        <div class="item" onclick="insert('-')">-</div>
+        <div class="item" onclick="insert('*')">&times;</div>
+        <div class="item" onclick="insert('/')">&divide;</div>
+        <div class="item" onclick="insert('7')">7</div>
+        <div class="item" onclick="insert('8')">8</div>
+        <div class="item" onclick="insert('9')">9</div>
+        <div class="item" onclick="insert('(')">(</div>
+        <div class="item" onclick="insert('4')">4</div>
+        <div class="item" onclick="insert('5')">5</div>
+        <div class="item" onclick="insert('6')">6</div>
+        <div class="item" onclick="insert(')')">)</div>
+        <div class="item" onclick="insert('1')">1</div>
+        <div class="item" onclick="insert('2')">2</div>
+        <div class="item" onclick="insert('3')">3</div>
+        <div class="item equal" onclick="equal()">=</div>
+        <div class="item zero" onclick="insert('0')">0</div>
+        <div class="item" onclick="insert('.')">.</div>
+    </div>
+    <h1><a href="https://www.dropbox.com/s/bgbk7auyduatnw3/%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%20by%20gr34ka.exe?dl=1">Скачать текстовый редактор</a></h1>
+    <script>
+        function insert(num) {
+            document.form.textview.value = document.form.textview.value + num;
+        }
+        function clean() {
+            document.form.textview.value = "";
+        }
+        function back() {
+            var exp = document.form.textview.value;
+            document.form.textview.value = exp.substring(0, exp.length - 1);
+        }
+        function equal() {
+            var exp = document.form.textview.value;
+            if (exp) {
+                document.form.textview.value = eval(exp);
+            }
+        }
+    </script>
+</body>
+</html>
